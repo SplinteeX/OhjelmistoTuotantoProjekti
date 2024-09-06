@@ -6,71 +6,73 @@ public class StringManipulatorJesperTest {
     private StringManipulatorJesper manipulator;
     @BeforeClass
     public static void setUpBeforeClass() {
-        System.out.println("Running @BeforeClass - Set up shared resources");
-        // Shared resources setup can be done here (if any)
     }
     @AfterClass
     public static void tearDownAfterClass() {
-        System.out.println("Running @AfterClass - Clean up shared resources");
-        // Shared resources cleanup can be done here (if any)
     }
     @Before
     public void setUp() {
-        System.out.println("Running @Before - Prepare for each test");
-        manipulator = new StringManipulatorJesper();  // Initialize a new instance before each test
+        manipulator = new StringManipulatorJesper();
     }
     @After
     public void tearDown() {
-        System.out.println("Running @After - Clean up after each test");
         manipulator = null;
     }
     @Test
     public void testReverse() {
-        System.out.println("Running testReverse");
-
-        String input = "hello";
-        String expected = "olleh";
+        System.out.println("Testataan testReverse");
+        // Testi 1
+        String input = "ieH";
+        String expected = "Hei";
         String result = manipulator.reverse(input);
         assertEquals(expected, result);
 
+        // Testi 2 - Tyhjän merkkijonon testaus
         input = "";
         expected = "";
         result = manipulator.reverse(input);
         assertEquals(expected, result);
 
+        // Testi 3 - Yhden merkin testaus
         input = "a";
         expected = "a";
         result = manipulator.reverse(input);
         assertEquals(expected, result);
 
+        // Testi 4 - Null testaus
         input = null;
         result = manipulator.reverse(input);
         assertNull(result);
     }
     @Test
     public void testCapitalize() {
-        System.out.println("Running testCapitalize");
+        System.out.println("Testataan testCapitalize");
 
-        String input = "hello";
-        String expected = "Hello";
+        // Testi 1 - Pienillä kirjaimilla alkava merkkijono
+        String input = "hei";
+        String expected = "Hei";
         String result = manipulator.capitalize(input);
         assertEquals(expected, result);
 
-        input = "Hello";
-        expected = "Hello";
+        // Testi 2 - Isoilla kirjaimilla alkava merkkijono
+        input = "Hei";
+        expected = "Hei";
         result = manipulator.capitalize(input);
         assertEquals(expected, result);
 
+        // Testi 3 - Tyhjän merkkijonon testaus
         input = "";
         expected = "";
         result = manipulator.capitalize(input);
         assertEquals(expected, result);
 
-        input = "h";
-        expected = "H";
+        // Testi 4 - Yhden merkin testaus
+        input = "a";
+        expected = "A";
         result = manipulator.capitalize(input);
         assertEquals(expected, result);
 
+        // Testi 5 - Null testaus
         input = null;
         result = manipulator.capitalize(input);
         assertNull(result);

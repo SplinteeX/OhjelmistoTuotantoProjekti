@@ -1,11 +1,12 @@
 public class StringManipulatorJesper {
     public String reverse(String input) {
-        // Check for null input
         if (input == null) {
             return null;
         }
-        return input;
+        return new StringBuilder(input).reverse().toString();
+        // Käytin StringBulderiä koska jo entuudesta tuttu ja helppo käyttää
     }
+
     public String capitalize(String input) {
         if (input == null || input.isEmpty()) {
             return input;
