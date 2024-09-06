@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>Temp_Convert</module>
-        <module>StringManiPulatorYourName</module>
+        <module>StringManiPulatorJesper</module>
         <module>Week3-HomeAssignment2</module>
     </modules>
 
